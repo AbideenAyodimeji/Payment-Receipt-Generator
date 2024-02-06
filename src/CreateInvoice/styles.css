@@ -1,0 +1,60 @@
+.invoice {
+  display: flex;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  background-color: #eee;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.titleContainer {
+  margin: 20px 70px;
+}
+
+.firstRow {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.inputName {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputName > label {
+  padding-top: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-right: 5px;
+  text-align: left;
+}
+
+.input,
+.textarea {
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
+  padding: 10px 0 5px 10px;
+  margin: 10px 0px;
+}
+
+.button {
+  background-color: green;
+  border-radius: 6px;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  height: 44px;
+  margin-top: 20px;
+  padding: 0 25px;
+  width: 100%;
+}
