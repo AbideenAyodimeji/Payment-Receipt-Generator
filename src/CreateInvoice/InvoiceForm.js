@@ -24,6 +24,7 @@ const InvoiceForm = () => {
   const handleBillFromData = e => {
     e.preventDefault()
     const { name, value } = e.target
+
     setBillFrom({
       ...billFrom,
       [name]: value,
@@ -112,12 +113,34 @@ const InvoiceForm = () => {
             <input
               name='EnterAmount'
               className='input'
-              type='text'
+              type='number'
               value={billFrom.EnterAmount}
               onChange={handleBillFromData}
               placeholder='$0.00'
             />
           </div>
+
+          {/* <div className='inputName'>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: 3,
+                marginTop: 10,
+              }}
+            >
+              <label>Enter Amount</label>
+              <img src={logo} style={{ height: 15, marginTop: 4 }} alt='Logo' />
+            </div>
+            <input
+              name='EnterAmount'
+              className='input'
+              type='text'
+              value={formatNumber(inputValue)}
+              onChange={handleInputChange}
+              placeholder='$0.00'
+            />
+          </div> */}
 
           <div className='inputName'>
             <div
@@ -144,14 +167,7 @@ const InvoiceForm = () => {
         </div>
 
         <PDFDownloadLink
-          document={
-            <InvoicePDF
-              billFrom={billFrom}
-              // client={client}
-              // total={total}
-              // items={items}
-            />
-          }
+          document={<InvoicePDF billFrom={billFrom} />}
           fileName={'Payment.pdf'}
         >
           {({ blob, url, loading, error }) =>
